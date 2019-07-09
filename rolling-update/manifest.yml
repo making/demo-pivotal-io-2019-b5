@@ -1,0 +1,7 @@
+---
+applications:
+- name: demo
+  instances: 5
+  buildpacks:
+  - php_buildpack
+  memory: 32m

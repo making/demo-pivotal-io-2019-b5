@@ -1,0 +1,13 @@
+applications:
+- name: demo
+  buildpacks:
+  - go_buildpack
+  memory: 64m
+  env:
+    GOPACKAGENAME: github.com/making/cf-sidecar
+    GO_INSTALL_PACKAGE_SPEC: github.com/making/cf-sidecar/cmd/main
+  sidecars:
+   - name: sidecar
+     process_types:
+     - web
+     command: ./sidecar
